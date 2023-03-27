@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "flairbackend",
+      "script": "npm",
+      "interpreter": "none",
+      "args": "node server.js"
+    }
+  ]
+}

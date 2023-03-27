@@ -1,0 +1,29 @@
+/********************************/
+/***********HERO**************/
+/********************************/
+.hero-section {
+  max-width: 150rem;
+  margin: 2.4rem auto;
+  display: flex;
+  margin-top: 14rem;
+}
+.hero-section .hero-section-content {
+  align-items: center;
+  justify-content: center;
+}
+.hero-section .hero-section-content div {
+  margin-top: 11rem;
+  text-align: center;
+  font-weight: 500;
+}
+.hero-section .hero-section-content button {
+  border: none;
+  padding: 2rem 4.8rem;
+  font-size: 2.4rem;
+  background-color: #fa5252;
+  border-radius: 10rem;
+  width: 20rem;
+  font-weight: 500;
+  margin-left: 21.8rem;
+  margin-top: 4.4rem;
+}

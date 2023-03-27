@@ -1,0 +1,57 @@
+/********************************/
+/***********PRODUCT CARD**************/
+/********************************/
+.card {
+  height: 50rem;
+  width: 37rem;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.08);
+  font-size: 2rem;
+}
+.card-link {
+  text-decoration: none;
+  color: black;
+}
+.image-container {
+  position: relative;
+  width: 37rem;
+  height: 30rem;
+  background-color: #e9eff4;
+}
+
+.product-description {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 1.8rem 2.4rem;
+}
+.name-container {
+  height: 3.4rem;
+}
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4.8rem;
+}
+
+.add-to-cart {
+  border: solid 1px black;
+  padding: 0.6rem 1.8rem;
+  color: black;
+  background-color: white;
+  font-size: 1.2rem;
+}
+.add-to-cart:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.productimage {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  height: 25rem;
+}

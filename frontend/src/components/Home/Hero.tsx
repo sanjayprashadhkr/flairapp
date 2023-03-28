@@ -5,10 +5,12 @@ export const Hero = () => {
   return (
     <div className="hero-section">
       <div className="hero-section-content">
-        <div style={{ fontSize: "48px" }}>
-          Grab upto 50% Off on Selected Shirts
+        <div className="offer-text-container">
+          <div style={{ fontSize: "48px" }}>
+            Grab upto 50% Off on Selected Shirts
+          </div>
+          <button>Buy Now</button>
         </div>
-        <button>Buy Now</button>
       </div>
       <img
         src={

@@ -20,7 +20,7 @@ function App() {
   //   location.pathname === "/loginform" || location.pathname === "/signupform";
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       {/* {!hideOnLoginForm && <Navbar />} */}
       <Routes>
         <Route path="/" element={<Home />} />

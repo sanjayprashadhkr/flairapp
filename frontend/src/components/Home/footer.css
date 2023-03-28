@@ -9,10 +9,11 @@
   height: 40rem;
   background-color: black;
   margin-top: 10rem;
-  width: 100%;
+  /* width: 100%; */
 }
-.footer-container .footer-box {
+.footer-box {
   display: flex;
+  justify-content: space-evenly;
   gap: 15rem;
 
   margin: auto;

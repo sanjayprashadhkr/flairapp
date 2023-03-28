@@ -9,7 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Accounticon, Carticon } from "../../assets/icons";
 
 export const Navbar = () => {
-  console.log("HELLLOOO");
   // const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [searchText, setSearchText] = useState("");

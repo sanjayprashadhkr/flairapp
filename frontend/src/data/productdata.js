@@ -1,4 +1,4 @@
-const productdata = [
+export const productdata = [
   {
     productId: 1,
     productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/shirt01.png",

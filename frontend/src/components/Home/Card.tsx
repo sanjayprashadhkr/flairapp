@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles.css";
+// import "../../styles.css";
 import "./card.css";
 // import { type } from "os";
 import { Link } from "react-router-dom";

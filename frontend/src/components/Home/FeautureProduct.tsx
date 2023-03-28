@@ -3,7 +3,7 @@ import React from "react";
 
 // import "../../styles/deals.css";
 // import "../../styles.css";
-import "./productfeauture.css";
+import "./feautureproduct.css";
 
 import { useSelector } from "react-redux";
 import { Card } from "./Card";

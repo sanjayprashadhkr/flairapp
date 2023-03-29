@@ -3,11 +3,12 @@
 /********************************/
 
 .products-container {
+  max-width: 160rem;
   font-size: 3.2rem;
   font-weight: 500;
-  max-width: 150rem;
   margin: 2.4rem auto;
-  margin-top: 4.8rem;
+  padding: 2.4rem;
+  width: 100%;
 }
 
 .product-cards {

@@ -2,8 +2,7 @@
 /***********PRODUCT CARD**************/
 /********************************/
 .card {
-  height: 50rem;
-  width: 37rem;
+  width: 100%;
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.08);
   font-size: 2rem;
 }
@@ -13,7 +12,6 @@
 }
 .image-container {
   position: relative;
-  width: 37rem;
   height: 30rem;
   background-color: #e9eff4;
 }

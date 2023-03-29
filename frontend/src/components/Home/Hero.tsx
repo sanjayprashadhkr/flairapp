@@ -6,9 +6,7 @@ export const Hero = () => {
     <div className="hero-section">
       <div className="hero-section-content">
         <div className="offer-text-container">
-          <div style={{ fontSize: "48px" }}>
-            Grab upto 50% Off on Selected Shirts
-          </div>
+          <div className="offer-text">Grab upto 50% Off on Selected Shirts</div>
           <button>Buy Now</button>
         </div>
       </div>

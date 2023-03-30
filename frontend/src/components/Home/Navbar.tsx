@@ -95,13 +95,13 @@ export const Navbar = () => {
       {/* Account/Cart Icons*/}
       <div className="icons">
         <div
-          className="account-icon"
+          className="icon-container "
           onClick={() => console.log("ACCOUNT ICONS")}
         >
           <Accounticon />
         </div>
         {/* <div className="cart-icon" onClick={(e) => navigate("/mycart")}> */}
-        <div className="cart-icon">
+        <div className="icon-container mg-left-2">
           <Carticon />
           {/*Display the total number of items in the cart*/}
           {/* {userdetails.cartLength > 0 && (

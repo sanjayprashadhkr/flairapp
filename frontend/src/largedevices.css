@@ -6,7 +6,16 @@
   }
 
   .offer-text {
-    font-size: 4.8rem;
+    font-size: 3.6rem;
     padding: 1.6rem 6.2rem;
+  }
+
+  .offer-text-container button {
+    font-size: 1.6rem;
+  }
+
+  :root {
+    --font-size-navbar: 1.4rem;
+    --svg-icon-size: 2rem;
   }
 }

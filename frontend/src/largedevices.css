@@ -1,0 +1,12 @@
+/*   Css media query between 992px and 1321px*/
+
+@media (min-width: 992px) and (max-width: 1321px) {
+  .nav-list-items {
+    gap: 5rem;
+  }
+
+  .offer-text {
+    font-size: 4.8rem;
+    padding: 1.6rem 6.2rem;
+  }
+}

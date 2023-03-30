@@ -1,22 +1,16 @@
-/********************************/
-/***********NAVBAR***************/
-/********************************/
-
 :root {
   --font-size: 1.6rem;
   --font-weight: 500;
 }
 
+@import url("largedevices.css");
+
 .navbar {
-  /* height: 6rem; */
   display: flex;
-  /* column-gap: 2rem; */
   justify-content: space-between;
   align-items: center;
   font-size: var(--font-size);
   font-family: "Noto Sans", sans-serif;
-  font-weight: var(--font-weight);
-  /* gap: 3rem; */
   margin-left: 11.3rem;
   margin-top: 3rem;
   /* border: 2px solid #fa5252; */
@@ -34,6 +28,7 @@
   list-style: none;
   /* border: 2px solid #36c099; */
 }
+
 .nav-list-items a {
   text-decoration: none;
   position: relative;
@@ -209,6 +204,10 @@
 .hero-section-content {
   max-width: 50%;
 }
+.offer-text {
+  font-size: 4.8rem;
+  padding: 1.6rem 1.2rem;
+}
 
 .offer-text-container {
   padding: 1.6rem 3.2rem;
@@ -216,14 +215,8 @@
 }
 
 .offer-text-container div {
-  font-size: 4.8rem;
   font-weight: 500;
   margin-bottom: 3.2rem;
-}
-
-.offer-text {
-  font-size: 4.8rem;
-  padding: 1.6rem 6.2rem;
 }
 
 .offer-text-container button {

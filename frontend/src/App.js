@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar } from "./components/Home/Navbar.tsx";
 import { Footer } from "./components/Home/Footer.tsx";
-import "./largedevices.css";
 
 import "./styles.css";
 import { Home } from "./pages/Home.tsx";

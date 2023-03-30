@@ -8,7 +8,7 @@ export const productdata = [
     color: "Red",
     type: "Shirt",
     launchDate: "2022-01-01",
-    productName: "Printed | Regular fit Shirt | Colour- Blue",
+    productName: "Printed Regular fit Shirt ",
   },
   {
     productId: 2,
@@ -19,7 +19,7 @@ export const productdata = [
     color: "Red",
     type: "Pants",
     launchDate: "2022-02-15",
-    productName: "Round Neck Cotton Blend Plain T-Shirts for Men | Colour- red",
+    productName: "Round Neck Cotton Blend Plain T-Shirt",
   },
   {
     productId: 3,
@@ -30,8 +30,7 @@ export const productdata = [
     color: "Black",
     type: "Jacket",
     launchDate: "2022-03-30",
-    productName:
-      "Printed Men's Round Neck Half Sleeve Casual Wear T-Shirt | Colour- Black",
+    productName: "Printed Round Neck Half Sleeve Casual Wear T-Shirt",
   },
   {
     productId: 4,
@@ -42,7 +41,7 @@ export const productdata = [
     color: "YBlue",
     type: "Hat",
     launchDate: "2022-04-12",
-    productName: "Men's Cotton Loose Fit Half Sleeves T-Shirt",
+    productName: "Cotton Loose Fit Half Sleeves T-Shirt",
   },
   {
     productId: 5,
@@ -53,8 +52,7 @@ export const productdata = [
     color: "Red",
     type: "Hat",
     launchDate: "2022-04-12",
-    productName:
-      "Men's Raglan Round Neck Full Sleeve Fan Art Theme Cotton T-Shirt",
+    productName: "Round Neck Full Sleeve Fan Art Theme Cotton T-Shirt",
   },
   {
     productId: 6,
@@ -65,7 +63,7 @@ export const productdata = [
     color: "Green",
     type: "Hat",
     launchDate: "2022-04-12",
-    productName: "Urbano Fashion Men's Full Sleeve Cotton T-Shirt",
+    productName: "Urbano Fashion Full Sleeve Cotton T-Shirt",
   },
   {
     productId: 7,
@@ -87,6 +85,6 @@ export const productdata = [
     color: "White",
     type: "Hat",
     launchDate: "2022-04-12",
-    productName: "Casual Plain Cotton Tshirt for Mens",
+    productName: "Casual Plain Cotton Tshirt",
   },
 ];

@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar } from "./components/Home/Navbar.tsx";
 import { Footer } from "./components/Home/Footer.tsx";
-// import { Navbar } from "./components/Home/Navbar";
-//import { Card } from "./components/Home/Card";
-// import { Footer } from "./components/Home/Footer";
+import "./largedevices.css";
+
+import "./styles.css";
 import { Home } from "./pages/Home.tsx";
 //import { Productdetails } from "./pages/Productdetails";
 //import { ProductSearchPage } from "./pages/ProductSearchPage";

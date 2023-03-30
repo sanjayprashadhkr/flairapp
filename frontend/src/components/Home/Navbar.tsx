@@ -1,6 +1,5 @@
 import React from "react";
 // import "../../styles.css";
-import "./navbar.css";
 // import logo from "../../images/flairlogo.png";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";

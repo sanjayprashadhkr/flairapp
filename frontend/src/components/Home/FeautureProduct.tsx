@@ -3,7 +3,6 @@ import React from "react";
 
 // import "../../styles/deals.css";
 // import "../../styles.css";
-import "./feautureproduct.css";
 
 import { useSelector } from "react-redux";
 import { Card } from "./Card";
@@ -14,6 +13,7 @@ export const FeautureProduct = ({ id1, id2, id3, id4, category }: any) => {
     <div className="products-container">
       <div className="product-heading">{category}</div>
       <div className="product-cards">
+        {/* Just try to use one card component and manage it we dont have to use 4 card components*/}
         <Card
           cloth={productList[id1].productImage}
           name={productList[id1].productName}

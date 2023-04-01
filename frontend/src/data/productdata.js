@@ -1,7 +1,7 @@
 export const productdata = [
   {
     productId: 1,
-    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/shirt01.png",
+    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/fullhand.png",
     price: 99.99,
     discount: 20,
     size: "S",
@@ -23,7 +23,7 @@ export const productdata = [
   },
   {
     productId: 3,
-    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/shirt03.png",
+    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/Polo+shirt.png",
     price: 149.99,
     discount: 30,
     size: "L",

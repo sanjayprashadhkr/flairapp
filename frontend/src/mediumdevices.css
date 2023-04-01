@@ -1,0 +1,27 @@
+@media (max-width: 988px) {
+  .nav-list-items {
+    position: fixed;
+    /* display: none; */
+    top: 0%;
+    left: -269px;
+    margin: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    gap: 40px;
+    justify-content: flex-start;
+    z-index: 100;
+    padding: 4.8rem 9.6rem;
+    transition: all 0.3s;
+  }
+  .nav-list-items a {
+    color: white !important;
+  }
+  .menu-icon {
+    display: block;
+  }
+
+  .close-icon {
+    display: block;
+  }
+}

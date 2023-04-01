@@ -53,7 +53,7 @@ export const Navbar = () => {
           className="logo"
         />
         {/* </Link> */}
-        <nav className={`nav-list-items ${reveal ? "reveal" : ""}`}>
+        <div className={`nav-list-items ${reveal ? "reveal" : ""}`}>
           {/*This button should be hidden until the screen size is */}
           <button className={`close-icon ${reveal}`} onClick={toggleReveal}>
             <Closeicon />
@@ -61,7 +61,7 @@ export const Navbar = () => {
           <a href="">Categories</a>
           <a href="">Deals</a>
           <a href="">What's New</a>
-        </nav>
+        </div>
         {/*Search bar*/}
         <input
           type="text"
@@ -92,7 +92,7 @@ export const Navbar = () => {
           }}
         />
         {/*Login/Logout button*/}
-        {isAuthenticated ? (
+        {/* {isAuthenticated ? (
           <div className="login-logout" onClick={() => console.log("LOGOUT")}>
             Logout
           </div>
@@ -106,7 +106,7 @@ export const Navbar = () => {
           >
             Login
           </div>
-        )}
+        )} */}
         {/* Account/Cart Icons*/}
         <div className="icons">
           <div

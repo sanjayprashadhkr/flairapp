@@ -27,6 +27,14 @@
 .close-icon {
   border: none;
   color: white;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  left: 10%;
+}
+
+.menu-icon {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .svg-menu {
@@ -39,6 +47,7 @@
   /* border: 2px solid #502ca3; */
 }
 .nav-list-items {
+  position: relative;
   margin-left: 10rem;
   display: flex;
   justify-content: space-between;
@@ -271,8 +280,14 @@ offer-text-container button:hover {
   padding: 0 4.8rem;
 }
 
-.product-cards {
+/* .product-cards {
   display: flex;
+  gap: 2rem;
+} */
+
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
@@ -357,6 +372,7 @@ offer-text-container button:hover {
   gap: 15rem;
 
   margin: auto;
+  padding: 0 9.6rem;
 }
 .footer-container div {
   text-transform: uppercase;

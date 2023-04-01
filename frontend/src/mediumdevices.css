@@ -1,9 +1,10 @@
-@media (max-width: 988px) {
+@media (min-width: 576px) and (max-width: 988px) {
+  /*NAV  */
   .nav-list-items {
     position: fixed;
     /* display: none; */
     top: 0%;
-    left: -269px;
+    left: -290px;
     margin: 0;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.9);
@@ -21,7 +22,92 @@
     display: block;
   }
 
+  .logo {
+    height: 2.2rem;
+  }
+
+  .searchbar {
+    margin-left: 0;
+    width: 50%;
+  }
+  :root {
+    --font-size-navbar: 1.4rem;
+    --svg-icon-size: 1.8rem;
+    --image-height: 20rem;
+  }
+
   .close-icon {
     display: block;
+  }
+  /*HERO*/
+
+  .hero-section {
+    max-width: 160rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10rem;
+    /* border: 2px solid #36c099; */
+  }
+
+  .hero-section img {
+    max-width: 70%;
+    /* height: auto; */
+  }
+
+  .hero-section-content {
+    max-width: 70%;
+  }
+  .offer-text {
+    font-size: 2.8rem;
+    padding: 1.6rem 1.6rem;
+  }
+
+  .offer-text-container button {
+    font-size: 1.4rem;
+  }
+
+  /********************************/
+  /***********PRODUCT FEAUTURE*****/
+  /********************************/
+
+  .product-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 2rem;
+  }
+
+  .product-heading {
+    font-size: 2.8rem;
+  }
+
+  /********************************/
+  /***********PRODUCT CARD**************/
+  /********************************/
+  .product-description {
+    font-size: 1.4rem;
+  }
+
+  .add-to-cart {
+    padding: 0.2rem 1.2rem;
+  }
+
+  /********************************/
+  /***********FOOTER**************/
+  /********************************/
+
+  .footer-box {
+    gap: 6rem;
+    padding: 0 6.2rem;
+  }
+
+  .footer-container div {
+    font-size: 1.2rem;
+  }
+
+  .footer-container .list-item a {
+    font-size: 1rem;
   }
 }

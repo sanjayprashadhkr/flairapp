@@ -4,6 +4,7 @@ import { Footer } from "./components/Home/Footer.tsx";
 import "./styles.css";
 import "./largedevices.css";
 import "./mediumdevices.css";
+import "./smalldevices.css";
 import { Home } from "./pages/Home.tsx";
 //import { Productdetails } from "./pages/Productdetails";
 //import { ProductSearchPage } from "./pages/ProductSearchPage";

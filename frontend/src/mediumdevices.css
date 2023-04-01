@@ -1,4 +1,4 @@
-@media (min-width: 576px) and (max-width: 988px) {
+@media (max-width: 988px) {
   /*NAV  */
   .nav-list-items {
     position: fixed;
@@ -28,7 +28,7 @@
 
   .searchbar {
     margin-left: 0;
-    width: 50%;
+    width: 45%;
   }
   :root {
     --font-size-navbar: 1.4rem;

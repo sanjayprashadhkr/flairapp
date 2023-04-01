@@ -33,7 +33,7 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-        <div>
+        <div className="social">
           <div className="list-heading">Social</div>
           <ul className="list-item">
             <a href="#">Facebook</a>

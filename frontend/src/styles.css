@@ -367,8 +367,9 @@ offer-text-container button:hover {
   /* width: 100%; */
 }
 .footer-box {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  /* justify-content: space-evenly; */
+  grid-template-columns: repeat(4, 1fr);
   gap: 15rem;
 
   margin: auto;

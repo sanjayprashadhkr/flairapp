@@ -1,2 +1,111 @@
-@media (min-width: 576px) and (max-width: 768px) {
+@media (max-width: 575px) {
+  .logo {
+    height: 2rem;
+    margin-left: 3rem;
+    margin-right: 1rem;
+  }
+
+  :root {
+    --font-size-navbar: 1.4rem;
+    --svg-icon-size: 1.4rem;
+    --image-height: 20rem;
+  }
+
+  .searchbar {
+    margin-left: 0;
+    width: 70%;
+    height: 4rem;
+    font-size: 1.2rem;
+  }
+  /*HERO*/
+
+  .hero-section {
+    max-width: 160rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10rem;
+    /* border: 2px solid #36c099; */
+  }
+
+  .hero-section img {
+    max-width: 100%;
+    /* height: auto; */
+  }
+
+  .hero-section-content {
+    max-width: 90%;
+  }
+  .offer-text {
+    font-size: 2.4rem;
+    padding: 1.6rem 0.2rem;
+  }
+
+  .offer-text-container button {
+    font-size: 1.4rem;
+  }
+  /********************************/
+  /***********PRODUCT FEAUTURE*****/
+  /********************************/
+
+  .product-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    gap: 2rem;
+  }
+
+  .product-heading {
+    font-size: 2.8rem;
+  }
+
+  /********************************/
+  /***********PRODUCT CARD**************/
+  /********************************/
+  .image-container {
+    position: relative;
+    height: 24rem;
+    background-color: #e9eff4;
+  }
+
+  /********************************/
+  /***********FOOTER**************/
+  /********************************/
+
+  .footer-container {
+    height: 50rem;
+  }
+  .footer-box {
+    gap: 6rem;
+    padding: 0 6.2rem;
+  }
+
+  .footer-container div {
+    font-size: 1.2rem;
+  }
+
+  .footer-container .list-item a {
+    font-size: 1rem;
+  }
+
+  .social {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+
+  .footer-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    margin: auto;
+    padding: 0 2.6rem;
+  }
+
+  .social {
+    grid-row: 2 / 3;
+    grid-column: 1 / 5;
+  }
 }

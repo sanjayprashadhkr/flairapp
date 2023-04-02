@@ -86,7 +86,7 @@ app.get("/signup", async (req, res) => {
       res.send(error);
     }
   } else {
-    res.send("USER EXISTS");
+    res.send(user[0]);
   }
 
   // try {

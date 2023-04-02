@@ -31,7 +31,7 @@ export const Navbar = () => {
   const dispatch = useDispatch();
 
   //Access the user reducer to get the number of cart items in the list
-  // const userdetails = useSelector((state: any) => state.userdata.value);
+  const userdetails = useSelector((state: any) => state.user);
 
   //Accessing the product details list state from redux store
   //const productList = useSelector((state: any) => state.product.value);
@@ -51,8 +51,16 @@ export const Navbar = () => {
         `http://localhost:4000/signup?email=${user?.email}`
       );
       const accessToken = await getAccessTokenSilently();
-      console.log(res);
-      dispatch(setUser({ emailId: "asfkaskfjy" }));
+      const data = await res.json();
+      console.log(data);
+      dispatch(
+        setUser({
+          emailId: data.emailId,
+          myCart: data.myCart,
+          orderHistory: data.orderHistory,
+          totalCartItems: data.totalCartItems,
+        })
+      );
     };
 
     if (isAuthenticated) {
@@ -120,7 +128,20 @@ export const Navbar = () => {
         />
         {/*Login/Logout button*/}
         {isAuthenticated ? (
-          <div className="login-logout" onClick={() => logout()}>
+          <div
+            className="login-logout"
+            onClick={() => {
+              logout();
+              dispatch(
+                setUser({
+                  emailId: null,
+                  myCart: null,
+                  orderHistory: null,
+                  totalCartItems: null,
+                })
+              );
+            }}
+          >
             Logout
           </div>
         ) : (
@@ -147,9 +168,9 @@ export const Navbar = () => {
           <div className="icon-container mg-left-2">
             <Carticon />
             {/*Display the total number of items in the cart*/}
-            {/* {userdetails.cartLength > 0 && (
-            <div className="totalcartitems">{userdetails.cartLength}</div>
-          )} */}
+            {userdetails.totalCartItems > 0 && (
+              <div className="totalcartitems">{userdetails.totalCartItems}</div>
+            )}
           </div>
         </div>
       </div>

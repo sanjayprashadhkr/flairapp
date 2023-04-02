@@ -11,6 +11,9 @@ const userSlice = createSlice({
   reducers: {
     setUser: (state, action) => {
       state.emailId = action.payload.emailId;
+      state.myCart = action.payload.myCart;
+      state.orderHistory = action.payload.orderHistory;
+      state.totalCartItems = action.payload.totalCartItems;
     },
   },
 });

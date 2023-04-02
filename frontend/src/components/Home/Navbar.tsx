@@ -5,11 +5,20 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 // import { useNavigate, Link } from "react-router-dom";
 // import { updateResult } from "../../reducers/searchresultreducer";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Accounticon, Carticon, Closeicon, Menuicon } from "../../assets/icons";
+import { setUser } from "../../reducers/user";
 
 export const Navbar = () => {
   // const navigate = useNavigate();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const {
+    loginWithRedirect,
+    isAuthenticated,
+    user,
+    getAccessTokenSilently,
+    logout,
+  } = useAuth0();
   const [searchText, setSearchText] = useState("");
   const [searchResultList, setSearchresultList] = useState([]);
   const [enterClicked, setEnterClicked] = useState(false);
@@ -19,7 +28,7 @@ export const Navbar = () => {
 
   //Defining a state to store the total number of items in the cart
   const [cartLength, setCartLength] = useState(0);
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   //Access the user reducer to get the number of cart items in the list
   // const userdetails = useSelector((state: any) => state.userdata.value);
@@ -34,6 +43,24 @@ export const Navbar = () => {
   // useEffect(() => {
   //   dispatch(updateResult([...searchResultList]));
   // }, [searchResultList, dispatch]);
+
+  useEffect(() => {
+    const fetchUserDetails = async () => {
+      //Check whether the user exists or not If not exists then signup
+      const res = await fetch(
+        `http://localhost:4000/signup?email=${user?.email}`
+      );
+      const accessToken = await getAccessTokenSilently();
+      console.log(res);
+      dispatch(setUser({ emailId: "asfkaskfjy" }));
+    };
+
+    if (isAuthenticated) {
+      //Check if the user already exists in the DB
+
+      fetchUserDetails();
+    }
+  }, [isAuthenticated]);
 
   const toggleReveal = (e: any) => {
     setReveal(!reveal);
@@ -92,8 +119,8 @@ export const Navbar = () => {
           }}
         />
         {/*Login/Logout button*/}
-        {/* {isAuthenticated ? (
-          <div className="login-logout" onClick={() => console.log("LOGOUT")}>
+        {isAuthenticated ? (
+          <div className="login-logout" onClick={() => logout()}>
             Logout
           </div>
         ) : (
@@ -101,12 +128,13 @@ export const Navbar = () => {
             className="login-logout"
             onClick={() => {
               console.log("LOGIN");
+              loginWithRedirect();
               // navigate("/loginform");
             }}
           >
             Login
           </div>
-        )} */}
+        )}
         {/* Account/Cart Icons*/}
         <div className="icons">
           <div

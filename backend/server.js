@@ -69,25 +69,40 @@ app.post("/signin", async (req, res) => {
 });
 
 //Registartion API
-app.post("/signup", async (req, res) => {
-  try {
-    const { userId, firstName, password, lastName, phoneNumber, emailId } =
-      req.body;
-    const user = new usermodel({
-      emailId,
-      firstName,
-      lastName,
-      password,
-      phoneNumber,
-      orderHistory: [],
-      myCart: [],
-      totalCartItems: 0,
-    });
-    const result = await user.save();
-    res.status(201).json(result);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
+app.get("/signup", async (req, res) => {
+  const emailId = String(req.query.email);
+  const user = await usermodel.find({ emailId: emailId });
+  if (user.length === 0) {
+    try {
+      const newuser = new usermodel({
+        emailId: emailId,
+        orderHistory: [],
+        myCart: [],
+        totalCartItems: 0,
+      });
+      const result = await newuser.save();
+      res.status(201).json(result);
+    } catch (error) {
+      res.send(error);
+    }
+  } else {
+    res.send("USER EXISTS");
   }
+
+  // try {
+  //   const { userId, firstName, password, lastName, phoneNumber, emailId } =
+  //     req.body;
+  //   const user = new usermodel({
+  //     emailId,
+  //     orderHistory: [],
+  //     myCart: [],
+  //     totalCartItems: 0,
+  //   });
+  //   const result = await user.save();
+  //   res.status(201).json(result);
+  // } catch (error) {
+  //   res.status(400).json({ message: error.message });
+  // }
 });
 
 //Update the cart

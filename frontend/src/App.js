@@ -6,6 +6,7 @@ import "./largedevices.css";
 import "./mediumdevices.css";
 import "./smalldevices.css";
 import { Home } from "./pages/Home.tsx";
+import Callback from "./components/Callback.js";
 //import { Productdetails } from "./pages/Productdetails";
 //import { ProductSearchPage } from "./pages/ProductSearchPage";
 import { Routes, Route } from "react-router-dom";

@@ -7,32 +7,22 @@ import "./mediumdevices.css";
 import "./smalldevices.css";
 import { Home } from "./pages/Home.tsx";
 import Callback from "./components/Callback.js";
-//import { Productdetails } from "./pages/Productdetails";
+import { Productinfo } from "./pages/Productinfo.tsx";
 //import { ProductSearchPage } from "./pages/ProductSearchPage";
 import { Routes, Route } from "react-router-dom";
 //import { Cart } from "./pages/Cart";
-// import { Loginform } from "./components/Loginform";
 import { useLocation } from "react-router-dom";
-// import { Signupform } from "./components/Signupform";
 import "./App.css";
 function App() {
-  // const location = useLocation();
-  //Hide navbar and footer if we are on the login form page
-  // const hideOnLoginForm =
-  //   location.pathname === "/loginform" || location.pathname === "/signupform";
   return (
     <div className="App">
       <Navbar />
-      {/* {!hideOnLoginForm && <Navbar />} */}
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/searchpage" element={<ProductSearchPage />} /> */}
-        {/* <Route path="/productdetails/:id" element={<Productdetails />} /> */}
-        {/* <Route path="/mycart" element={<Cart />} />
-        <Route path="/loginform" element={<Loginform />} />
-        <Route path="/signupform" element={<Signupform />} /> */}
+        <Route path="/productinfo/:id" element={<Productinfo />} />
+        {/* <Route path="/mycart" element={<Cart />} />*/}
       </Routes>
-      {/* {!hideOnLoginForm && <Footer />} */}
       <Footer />
     </div>
   );

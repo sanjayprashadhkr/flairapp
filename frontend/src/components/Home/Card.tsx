@@ -11,7 +11,7 @@ type propType = {
 export const Card = ({ cloth, name, productid, price }: propType) => {
   return (
     <div className="card">
-      <Link className="card-link" to={`/productdetails/${productid}`}>
+      <Link className="card-link" to={`/productinfo/${productid}`}>
         <div className="image-container">
           <img src={cloth} alt="cloth" className="productimage" />
         </div>

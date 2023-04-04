@@ -1,19 +1,26 @@
 import React from "react";
-import { Navbar } from "./components/Home/Navbar.tsx";
-import { Footer } from "./components/Home/Footer.tsx";
+import { Navbar } from "./components/Home/Navbar";
+import { Footer } from "./components/Home/Footer";
 import "./styles.css";
 import "./largedevices.css";
 import "./mediumdevices.css";
 import "./smalldevices.css";
-import { Home } from "./pages/Home.tsx";
+import { Home } from "./pages/Home";
 import Callback from "./components/Callback.js";
-import { Productinfo } from "./pages/Productinfo.tsx";
+import { Productinfo } from "./pages/Productinfo";
 //import { ProductSearchPage } from "./pages/ProductSearchPage";
 import { Routes, Route } from "react-router-dom";
 //import { Cart } from "./pages/Cart";
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import "./App.css";
+
 function App() {
+  //Reset the page view to the top every time the user navigates to a new page
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <div className="App">
       <Navbar />

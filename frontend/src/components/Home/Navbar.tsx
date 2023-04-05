@@ -1,6 +1,7 @@
 import React from "react";
 // import "../../styles.css";
 // import logo from "../../images/flairlogo.png";
+
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 // import { useNavigate, Link } from "react-router-dom";
@@ -8,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Accounticon, Carticon, Closeicon, Menuicon } from "../../assets/icons";
 import { setUser } from "../../reducers/user";
+import "./navbar.css";
 
 export const Navbar = () => {
   // const navigate = useNavigate();

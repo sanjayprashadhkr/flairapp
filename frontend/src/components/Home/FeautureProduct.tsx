@@ -1,9 +1,8 @@
 import React from "react";
-//Write a short form of the import statement below
 
+import "./feautureproduct.css";
 // import "../../styles/deals.css";
 // import "../../styles.css";
-
 import { useSelector } from "react-redux";
 import { Card } from "./Card";
 

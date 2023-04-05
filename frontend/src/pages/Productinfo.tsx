@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "./productinfo.css";
 
 export const Productinfo = () => {
   const { id } = useParams();

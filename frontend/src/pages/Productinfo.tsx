@@ -1,6 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Sizecontainer } from "../components/Productinfo/Sizecontainer";
+import { Description } from "../components/Productinfo/Description";
+import { Price } from "../components/Productinfo/Price";
 import "./productinfo.css";
 
 export const Productinfo = () => {
@@ -15,8 +18,15 @@ export const Productinfo = () => {
         <img src={currentProduct.productImage} alt="cloth" />
       </div>
 
-      <div className="product-name">{currentProduct.productName}</div>
-      <div className="product-price">Product price section</div>
+      <div>
+        <div className="product-name">{currentProduct.productName}</div>
+        <div className="size-container-parent">
+          <div>Choose Size:</div>
+          <Sizecontainer />
+        </div>
+        <Description description={currentProduct.productDescription} />
+      </div>
+      <Price />
     </div>
   );
 };

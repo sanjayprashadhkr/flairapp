@@ -6,17 +6,17 @@ import "./productinfo.css";
 export const Productinfo = () => {
   const { id } = useParams();
   const products = useSelector((state: any) => state.product);
+  //get the info of the product from the product list in the from the redux store
   const productsArray = products.value;
-  console.log(productsArray[Number(id) - 1]);
-  console.log(productsArray[Number(id) - 1].productImage);
+  const currentProduct = productsArray[Number(id) - 1];
   return (
-    <div>
+    <div className="productinfo-container">
       <div className="image-container productinfo-image-container">
-        <img src={productsArray[Number(id) - 1].productImage} alt="cloth" />
+        <img src={currentProduct.productImage} alt="cloth" />
       </div>
 
-      <div>Product name</div>
-      <div>Product price</div>
+      <div className="product-name">{currentProduct.productName}</div>
+      <div className="product-price">Product price section</div>
     </div>
   );
 };

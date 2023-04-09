@@ -2,6 +2,13 @@
 /***********PRODUCT INFO*********/
 /********************************/
 
+.productinfo-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 180rem;
+  margin: 2.4rem auto;
+}
+
 .productinfo-image-container {
   height: 50rem;
   width: 35rem;
@@ -17,4 +24,17 @@
   /* height: var(--image-height); */
   height: 100%;
   padding: 12%;
+}
+
+.product-name {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-top: 2.4rem;
+  font-weight: 600;
+}
+
+.product-price {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-top: 2.4rem;
 }

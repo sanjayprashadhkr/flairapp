@@ -7,11 +7,13 @@ import { Provider } from "react-redux";
 import { Auth0Provider } from "@auth0/auth0-react";
 import productReducer from "./reducers/product";
 import userReducer from "./reducers/user";
+import searchReducer from "./reducers/searchresult";
 
 const store = configureStore({
   reducer: {
     product: productReducer,
     user: userReducer,
+    searchresult: searchReducer,
   },
 });
 const domain = "dev-qouk516vim4qcqtp.us.auth0.com";

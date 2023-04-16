@@ -10,7 +10,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Accounticon, Carticon, Closeicon, Menuicon } from "../../assets/icons";
 import { setUser } from "../../reducers/user";
 import { useNavigate } from "react-router-dom";
+import { productdata } from "../../data/productdata";
 import "./navbar.css";
+import { setSearchResult } from "../../reducers/searchresult";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -40,7 +42,8 @@ export const Navbar = () => {
   //const productList = useSelector((state: any) => state.product.value);
 
   //Access the search result list
-  // const searchResults = useSelector((state: any) => state.searchresult.value);
+  const searchResults = useSelector((state: any) => state.searchresult.value);
+  console.log(searchResults);
 
   //update the redux store with the search result list
   // useEffect(() => {
@@ -52,6 +55,11 @@ export const Navbar = () => {
   }
   useEffect(() => {
     if (searchText.length > 0) {
+      const filteredProducts = productdata.filter((product) =>
+        product.productName.toLowerCase().includes(searchText.toLowerCase())
+      );
+
+      dispatch(setSearchResult(filteredProducts));
       navigate(`/searchpage`);
     } else {
       navigate(`/`);
@@ -66,7 +74,7 @@ export const Navbar = () => {
       );
       const accessToken = await getAccessTokenSilently();
       const data = await res.json();
-      console.log(data);
+      //console.log(data);
       dispatch(
         setUser({
           emailId: data.emailId,

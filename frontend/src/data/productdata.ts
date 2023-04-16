@@ -86,7 +86,7 @@ export const productdata = [
     color: "Brown",
     type: "Hat",
     launchDate: "2022-04-12",
-    productName: "Yellow Hat",
+    productName: "Urbano Fashion Full Sleeve Cotton T-Shirt",
     productDescription:
       "Introducing our new regular fit long sleeve shirt, the perfect combination of comfort and style. Made with high-quality materials, this shirt will keep you looking sharp while feeling relaxed. Dress it up for a night out or dress it down for a casual day, this versatile shirt will quickly become a wardrobe staple. Don't miss out on the opportunity to upgrade your wardrobe with this must-have piece!",
   },

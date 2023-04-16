@@ -9,10 +9,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Accounticon, Carticon, Closeicon, Menuicon } from "../../assets/icons";
 import { setUser } from "../../reducers/user";
+import { useNavigate } from "react-router-dom";
 import "./navbar.css";
 
 export const Navbar = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const {
     loginWithRedirect,
@@ -45,6 +46,17 @@ export const Navbar = () => {
   // useEffect(() => {
   //   dispatch(updateResult([...searchResultList]));
   // }, [searchResultList, dispatch]);
+
+  {
+    /*display the search result as soon as the user types the text in the search bar     */
+  }
+  useEffect(() => {
+    if (searchText.length > 0) {
+      navigate(`/searchpage`);
+    } else {
+      navigate(`/`);
+    }
+  }, [searchText]);
 
   useEffect(() => {
     const fetchUserDetails = async () => {

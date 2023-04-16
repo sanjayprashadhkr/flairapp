@@ -9,8 +9,8 @@ export const Price = ({ price }: any) => {
         <div>2</div>
         <button> +</button>
       </div>
-      <button>Buy Now</button>
-      <button>Add to Cart</button>
+      <button className="buy-now">Buy Now</button>
+      <button className="addtocart">Add to Cart</button>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "./components/Home/Navbar";
 import { Footer } from "./components/Home/Footer";
+import { SearchPage } from "./pages/SearchPage";
 import "./styles.css";
 import { Home } from "./pages/Home";
 import { Productinfo } from "./pages/Productinfo";
@@ -22,7 +23,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/searchpage" element={<ProductSearchPage />} /> */}
+        <Route path="/searchpage" element={<SearchPage />} />
         <Route path="/productinfo/:id" element={<Productinfo />} />
         {/* <Route path="/mycart" element={<Cart />} />*/}
       </Routes>

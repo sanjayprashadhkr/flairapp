@@ -24,6 +24,8 @@ export const Navbar = () => {
     getAccessTokenSilently,
     logout,
   } = useAuth0();
+
+  console.log(isAuthenticated);
   const [searchText, setSearchText] = useState("");
   const [searchResultList, setSearchresultList] = useState([]);
   const [enterClicked, setEnterClicked] = useState(false);
@@ -53,19 +55,8 @@ export const Navbar = () => {
   {
     /*display the search result as soon as the user types the text in the search bar     */
   }
-  useEffect(() => {
-    if (searchText.length > 0) {
-      const filteredProducts = productdata.filter((product) =>
-        product.productName.toLowerCase().includes(searchText.toLowerCase())
-      );
 
-      dispatch(setSearchResult(filteredProducts));
-      navigate(`/searchpage`);
-    } else {
-      navigate(`/`);
-    }
-  }, [searchText]);
-
+  //User Registration
   useEffect(() => {
     const fetchUserDetails = async () => {
       //Check whether the user exists or not If not exists then signup
@@ -134,17 +125,15 @@ export const Navbar = () => {
               console.log("Enter key pressed");
               //As soon the enter is pressed, the search result list is updated
               //Search result list is an array of product ids
-              // setSearchresultList(
-              //   productList
-              //     .filter((obj: { productName: string }) =>
-              //       obj.productName.toLowerCase().includes(searchText)
-              //     )
-              //     .map((obj: { productId: any }) => obj.productId)
-              // );
-              //dispatch(updateResult([...searchResultList]));
+              const filteredProducts = productdata.filter((product) =>
+                product.productName
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase())
+              );
+
+              dispatch(setSearchResult(filteredProducts));
+              navigate(`/searchpage`);
               // Perform search or other action here
-              setEnterClicked(true);
-              // navigate("/searchpage");
             }
           }}
         />

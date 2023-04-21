@@ -71,6 +71,7 @@ app.post("/signin", async (req, res) => {
 //Registartion API
 app.get("/signup", async (req, res) => {
   const emailId = String(req.query.email);
+  console.log(emailId);
   const user = await usermodel.find({ emailId: emailId });
   if (user.length === 0) {
     try {

@@ -112,8 +112,11 @@ app.post("/updatecart", async (req, res) => {
   // console.log(req.body);
 
   // Update user's cart
-  const { accessToken, productId, productName, quantity, price } = req.body;
-  const emailId = accessToken;
+  const { emailId, productid, quantity } = req.body;
+
+  console.log(emailId);
+  console.log(productid);
+  console.log(quantity);
 
   //Retieve the user Id using the email ID
   const user = await usermodel.findOne({ emailId: emailId });
@@ -122,10 +125,8 @@ app.post("/updatecart", async (req, res) => {
     return res.status(404).json({ message: "User not found" });
   }
   user.myCart.push({
-    productId: productId,
-    productName: productName,
+    productid: productid,
     quantity: quantity,
-    price: price,
   });
   user.totalCartItems += quantity;
   user.save();

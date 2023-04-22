@@ -1,11 +1,8 @@
 import React from "react";
-// import "../../styles.css";
-// import logo from "../../images/flairlogo.png";
 
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { useNavigate, Link } from "react-router-dom";
-// import { updateResult } from "../../reducers/searchresultreducer";
+
 import { useAuth0 } from "@auth0/auth0-react";
 import { Accounticon, Carticon, Closeicon, Menuicon } from "../../assets/icons";
 import { setUser } from "../../reducers/user";
@@ -41,17 +38,9 @@ export const Navbar = () => {
   //Access the user reducer to get the number of cart items in the list
   const userdetails = useSelector((state: any) => state.user);
 
-  //Accessing the product details list state from redux store
-  //const productList = useSelector((state: any) => state.product.value);
-
   //Access the search result list
   const searchResults = useSelector((state: any) => state.searchresult.value);
   console.log(searchResults);
-
-  //update the redux store with the search result list
-  // useEffect(() => {
-  //   dispatch(updateResult([...searchResultList]));
-  // }, [searchResultList, dispatch]);
 
   {
     /*display the search result as soon as the user types the text in the search bar     */

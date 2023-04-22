@@ -8,6 +8,18 @@ export const Price = ({ price, productid }: any) => {
   const user = useSelector((state: any) => state.user);
   const emailId = user.emailId;
   const dispatch = useDispatch();
+  const myCart = user.myCart;
+  console.log(myCart);
+  const isProductAlreadyPresentInTheCart = () => {
+    for (let i = 0; i < myCart.length; i++) {
+      console.log("PRODUCTIDD");
+      console.log(myCart[i].productid);
+      if (myCart[i].productid === productid) {
+        console.log("YESSS ITS THERE!!!");
+        return true;
+      }
+    }
+  };
   return (
     <div className="price-container-productinfo">
       <div>Price: ${price}</div>
@@ -33,24 +45,26 @@ export const Price = ({ price, productid }: any) => {
       <button
         className="addtocart"
         onClick={async () => {
-          const res = await fetch(`http://localhost:4000/updatecart`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              emailId: emailId,
-              price: price,
-              productid: productid,
-              quantity: quantity,
-            }),
-          });
-          dispatch(
-            updateCart({
-              productid: productid,
-              quantity: quantity,
-            })
-          );
+          if (!isProductAlreadyPresentInTheCart()) {
+            const res = await fetch(`http://localhost:4000/updatecart`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                emailId: emailId,
+                price: price,
+                productid: productid,
+                quantity: quantity,
+              }),
+            });
+            dispatch(
+              updateCart({
+                productid: productid,
+                quantity: quantity,
+              })
+            );
+          }
         }}
       >
         Add to Cart

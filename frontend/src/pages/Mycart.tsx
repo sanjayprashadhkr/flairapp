@@ -1,5 +1,17 @@
 import React from "react";
-
+import { Cartcard } from "../components/Mycart/Cartcard";
+import { useSelector } from "react-redux";
+import { Card } from "../components/Home/Card";
 export const Mycart = () => {
-  return <div>Mycart</div>;
+  const myCart = useSelector((state: any) => state.user.myCart);
+  console.log(myCart);
+  return (
+    <>
+      {myCart.map((product: any) => {
+        return (
+          <Cartcard productid={product.productid} quantity={product.quantity} />
+        );
+      })}
+    </>
+  );
 };

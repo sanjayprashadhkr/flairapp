@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { Card } from "../components/Home/Card";
 export const Mycart = () => {
   const myCart = useSelector((state: any) => state.user.myCart);
-  console.log(myCart);
   return (
     <>
       {myCart.map((product: any) => {

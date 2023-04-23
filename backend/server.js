@@ -108,19 +108,10 @@ app.get("/signup", async (req, res) => {
 
 //Update the cart
 app.post("/updatecart", async (req, res) => {
-  // console.log("UPDATE CART ");
-  // console.log(req.body);
-
   // Update user's cart
   const { emailId, productid, quantity } = req.body;
-
-  console.log(emailId);
-  console.log(productid);
-  console.log(quantity);
-
   //Retieve the user Id using the email ID
   const user = await usermodel.findOne({ emailId: emailId });
-  //const user = await usermodel.findById("6411511f7176c2964d6be7e4");
   if (!user) {
     return res.status(404).json({ message: "User not found" });
   }
@@ -130,12 +121,39 @@ app.post("/updatecart", async (req, res) => {
   });
   user.totalCartItems += quantity;
   user.save();
-  // user.myCart.push(req.body);
-  // console.log(user);
-  //user.cartLength = user.myCart.length;
-  // await user.updateOne({ $set: { myCart: user.myCart } });
 
   res.status(200).json("Cart updated successfully");
+});
+
+app.delete("/deletecartitem", async (req, res) => {
+  const { emailId, productid } = req.body;
+
+  console.log("DELETE IS GETTING CALLED");
+
+  const user = await usermodel.findOne({ emailId: emailId });
+  if (!user) {
+    return res.status(404).json({ message: "User not found" });
+  }
+
+  const cartItem = user.myCart.find((item) => {
+    console.log(item);
+    console.log(productid);
+    return item.productid === productid;
+  });
+  console.log(cartItem);
+  let quantity = cartItem.quantity;
+  user
+    .updateOne({ $pull: { myCart: { productid: productid } } })
+    .exec()
+    .then((result) => {
+      console.log(result);
+      user.totalCartItems -= quantity;
+      user.save();
+      return res.status(200).json({ message: "ITEM DELETED SUCCESSFULLY" });
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 });
 
 //Connect to DB

@@ -23,7 +23,6 @@ export const Navbar = () => {
     logout,
   } = useAuth0();
 
-  console.log(isAuthenticated);
   const [searchText, setSearchText] = useState("");
   const [searchResultList, setSearchresultList] = useState([]);
   const [enterClicked, setEnterClicked] = useState(false);
@@ -40,7 +39,6 @@ export const Navbar = () => {
 
   //Access the search result list
   const searchResults = useSelector((state: any) => state.searchresult.value);
-  console.log(searchResults);
 
   {
     /*display the search result as soon as the user types the text in the search bar     */
@@ -54,7 +52,7 @@ export const Navbar = () => {
       );
       const accessToken = await getAccessTokenSilently();
       const data = await res.json();
-      console.log(data);
+
       dispatch(
         setUser({
           emailId: data.emailId,
@@ -109,7 +107,6 @@ export const Navbar = () => {
           className="searchbar"
           onChange={(e) => {
             setSearchText(e.target.value.toLowerCase());
-            console.log(searchText);
           }}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
@@ -150,7 +147,6 @@ export const Navbar = () => {
           <div
             className="login-logout"
             onClick={() => {
-              console.log("LOGIN");
               loginWithRedirect();
               // navigate("/loginform");
             }}

@@ -12,10 +12,7 @@ export const Price = ({ price, productid }: any) => {
   console.log(myCart);
   const isProductAlreadyPresentInTheCart = () => {
     for (let i = 0; i < myCart.length; i++) {
-      console.log("PRODUCTIDD");
-      console.log(myCart[i].productid);
       if (myCart[i].productid === productid) {
-        console.log("YESSS ITS THERE!!!");
         return true;
       }
     }

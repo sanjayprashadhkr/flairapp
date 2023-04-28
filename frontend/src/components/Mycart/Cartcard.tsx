@@ -21,28 +21,10 @@ export const Cartcard = ({ productid, quantity }: any) => {
   return (
     <div className="card-container">
       <img src={currentProduct.productImage} />
-      <div>
+      <div className="cart-details-container">
         <div>{currentProduct.productName}</div>
-        <div>{currentProduct.price}</div>
         <div>
-          <div className="qty-container">
-            <button
-              onClick={() => {
-                if (quantitytemp > 1) setQuantity(quantitytemp - 1);
-              }}
-            >
-              -
-            </button>
-            <div>{quantitytemp}</div>
-            <button
-              onClick={() => {
-                setQuantity(quantitytemp + 1);
-              }}
-            >
-              {" "}
-              +
-            </button>
-          </div>
+          <div>{currentProduct.price}</div>
           <button
             onClick={async () => {
               const response = await fetch(
@@ -64,6 +46,24 @@ export const Cartcard = ({ productid, quantity }: any) => {
             }}
           >
             Remove
+          </button>
+        </div>
+        <div className="qty-container">
+          <button
+            onClick={() => {
+              if (quantitytemp > 1) setQuantity(quantitytemp - 1);
+            }}
+          >
+            -
+          </button>
+          <div>{quantitytemp}</div>
+          <button
+            onClick={() => {
+              setQuantity(quantitytemp + 1);
+            }}
+          >
+            {" "}
+            +
           </button>
         </div>
       </div>

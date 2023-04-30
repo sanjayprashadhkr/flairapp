@@ -87,7 +87,7 @@ app.get("/signup", async (req, res) => {
 //Update the cart
 app.post("/updatecart", async (req, res) => {
   // Update user's cart
-  const { emailId, productid, quantity } = req.body;
+  const { emailId, productid, quantity, price } = req.body;
   //Retieve the user Id using the email ID
   const user = await usermodel.findOne({ emailId: emailId });
   if (!user) {
@@ -96,6 +96,7 @@ app.post("/updatecart", async (req, res) => {
   user.myCart.push({
     productid: productid,
     quantity: quantity,
+    price: price,
   });
   user.totalCartItems += quantity;
   user.save();
@@ -114,8 +115,6 @@ app.delete("/deletecartitem", async (req, res) => {
   }
 
   const cartItem = user.myCart.find((item) => {
-    console.log(item);
-    console.log(productid);
     return item.productid === productid;
   });
   console.log(cartItem);

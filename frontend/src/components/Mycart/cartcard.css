@@ -8,6 +8,10 @@
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
+.card-container:nth-child(1) {
+  margin-top: 0px;
+}
+
 .card-container img {
   width: 100%;
   padding: 30px;

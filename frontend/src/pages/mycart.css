@@ -1,0 +1,7 @@
+.mycart-container {
+  display: flex;
+  max-width: 120rem;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 15rem;
+}

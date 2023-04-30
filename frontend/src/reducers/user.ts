@@ -21,12 +21,11 @@ const userSlice = createSlice({
       state.myCart.push({
         productid: action.payload.productid,
         quantity: action.payload.quantity,
+        price: action.payload.price,
       });
     },
     removeCartItem: (state, action) => {
-      console.log("HELLLLLLLLLLLLO");
       const idToBeRemoved = action.payload.productid;
-      console.log("THIS IS THE ID TO BE REMOVED", idToBeRemoved);
 
       state.myCart = state.myCart.filter((product: any) => {
         console.log("product", product.productid);

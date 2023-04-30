@@ -26,7 +26,7 @@ export const Productinfo = () => {
         </div>
         <Description description={currentProduct.productDescription} />
       </div>
-      <Price productid={Number(id)} />
+      <Price price={currentProduct.price} productid={Number(id)} />
     </div>
   );
 };

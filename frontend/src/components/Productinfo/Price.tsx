@@ -9,7 +9,7 @@ export const Price = ({ price, productid }: any) => {
   const emailId = user.emailId;
   const dispatch = useDispatch();
   const myCart = user.myCart;
-  console.log(myCart);
+  console.log("price" + price);
   const isProductAlreadyPresentInTheCart = () => {
     for (let i = 0; i < myCart.length; i++) {
       if (myCart[i].productid === productid) {
@@ -35,6 +35,7 @@ export const Price = ({ price, productid }: any) => {
         updateCart({
           productid: productid,
           quantity: quantity,
+          price: price,
         })
       );
     }

@@ -42,6 +42,7 @@ export const Card = ({ cloth, name, productid, price }: propType) => {
         updateCart({
           productid: productid,
           quantity: quantity,
+          price: price,
         })
       );
     }

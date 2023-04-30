@@ -9,7 +9,6 @@ export const Price = ({ price, productid }: any) => {
   const emailId = user.emailId;
   const dispatch = useDispatch();
   const myCart = user.myCart;
-  console.log("price" + price);
   const isProductAlreadyPresentInTheCart = () => {
     for (let i = 0; i < myCart.length; i++) {
       if (myCart[i].productid === productid) {

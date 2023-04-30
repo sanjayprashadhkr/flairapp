@@ -9,6 +9,7 @@ import "./mycart.css";
 export const Mycart = () => {
   const myCart = useSelector((state: any) => state.user.myCart);
   const [price, setPrice] = useState(0);
+  const [detectChange, setDetectChange] = useState(0);
   return (
     <div className="mycart-container">
       <div>

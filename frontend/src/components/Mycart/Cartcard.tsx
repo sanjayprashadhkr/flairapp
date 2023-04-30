@@ -42,7 +42,7 @@ export const Cartcard = ({ productid, quantity }: any) => {
           {currentProduct.productName}
         </div>
         <div className="cart-details-seconday-container">
-          <div className="cartcard-product-price">{currentProduct.price}</div>
+          <div className="cartcard-product-price">${currentProduct.price}</div>
           <button onClick={deleteitem} className="remove-button">
             Remove
           </button>

@@ -18,33 +18,32 @@ export const Cartcard = ({ productid, quantity }: any) => {
     }
   }
 
+  const deleteitem = async () => {
+    const response = await fetch("http://localhost:4000/deletecartitem", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        emailId: user.emailId,
+        productid: productid,
+      }),
+    }).then(() => {
+      console.log("THEN IS CALLED");
+      dispatch(removeCartItem({ productid: productid }));
+    });
+  };
+
   return (
     <div className="card-container">
       <img src={currentProduct.productImage} />
       <div className="cart-details-container">
-        <div>{currentProduct.productName}</div>
-        <div>
-          <div>{currentProduct.price}</div>
-          <button
-            onClick={async () => {
-              const response = await fetch(
-                "http://localhost:4000/deletecartitem",
-                {
-                  method: "DELETE",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    emailId: user.emailId,
-                    productid: productid,
-                  }),
-                }
-              ).then(() => {
-                console.log("THEN IS CALLED");
-                dispatch(removeCartItem({ productid: productid }));
-              });
-            }}
-          >
+        <div className="cartcard-product-name">
+          {currentProduct.productName}
+        </div>
+        <div className="cart-details-seconday-container">
+          <div className="cartcard-product-price">{currentProduct.price}</div>
+          <button onClick={deleteitem} className="remove-button">
             Remove
           </button>
         </div>

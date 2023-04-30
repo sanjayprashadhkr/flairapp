@@ -10,13 +10,43 @@
 
 .card-container img {
   width: 100%;
-  padding: 15px;
+  padding: 30px;
   background-color: #e9eff4;
   /* Remove the box shadow property from here */
 }
 
 .cart-details-container {
-  /* display: flex; */
-  /* gap: 4rem; */
+  display: flex;
+  gap: 4rem;
   flex-direction: column;
+  padding: 1.6rem 2.4rem;
+}
+
+.cart-details-seconday-container {
+  display: flex;
+  gap: 5.8rem;
+  justify-content: flex-start !important;
+}
+
+.cartcard-product-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.cartcard-product-price {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.remove-button {
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  background-color: white;
+  border: solid 1px #ff8787;
+  color: #ff8787;
+}
+
+.remove-button:hover {
+  background-color: #ff8787;
+  color: white;
 }

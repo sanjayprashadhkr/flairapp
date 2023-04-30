@@ -18,12 +18,6 @@ require("dotenv").config();
 const usermodel = require("./models/usermodel");
 const bodyParser = require("body-parser");
 
-// //Get all workouts
-// const getAllWorkout = async (req, res) => {
-//   const workouts = await WorkoutModel.find({}).sort({ createdAt: -1 });
-//   res.status(200).json(workouts);
-// };
-
 //Middle ware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,7 +35,6 @@ app.use((req, res, next) => {
 app.get("/", async (req, res) => {
   try {
     const users = await usermodel.find({});
-    //console.log(users);
     // res.json({ Greetings: "Hello user!!!" });
     res.status(200).header("Content-Type", "application/json").send(users);
   } catch (error) {
@@ -89,21 +82,6 @@ app.get("/signup", async (req, res) => {
   } else {
     res.send(user[0]);
   }
-
-  // try {
-  //   const { userId, firstName, password, lastName, phoneNumber, emailId } =
-  //     req.body;
-  //   const user = new usermodel({
-  //     emailId,
-  //     orderHistory: [],
-  //     myCart: [],
-  //     totalCartItems: 0,
-  //   });
-  //   const result = await user.save();
-  //   res.status(201).json(result);
-  // } catch (error) {
-  //   res.status(400).json({ message: error.message });
-  // }
 });
 
 //Update the cart
@@ -167,10 +145,3 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-
-// const run = async () => {
-//   const user = new usermodel({ emailId: "sanjaysskr1r908@yopmail.com" });
-//   await user.save();
-//   console.log(user);
-// };
-// run();

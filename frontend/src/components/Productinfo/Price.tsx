@@ -17,6 +17,28 @@ export const Price = ({ price, productid }: any) => {
       }
     }
   };
+  const additemtocart = async () => {
+    if (!isProductAlreadyPresentInTheCart()) {
+      const res = await fetch(`http://localhost:4000/updatecart`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          emailId: emailId,
+          price: price,
+          productid: productid,
+          quantity: quantity,
+        }),
+      });
+      dispatch(
+        updateCart({
+          productid: productid,
+          quantity: quantity,
+        })
+      );
+    }
+  };
   return (
     <div className="price-container-productinfo">
       <div>Price: ${price}</div>
@@ -39,31 +61,7 @@ export const Price = ({ price, productid }: any) => {
         </button>
       </div>
       <button className="buy-now">Buy Now</button>
-      <button
-        className="addtocart"
-        onClick={async () => {
-          if (!isProductAlreadyPresentInTheCart()) {
-            const res = await fetch(`http://localhost:4000/updatecart`, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                emailId: emailId,
-                price: price,
-                productid: productid,
-                quantity: quantity,
-              }),
-            });
-            dispatch(
-              updateCart({
-                productid: productid,
-                quantity: quantity,
-              })
-            );
-          }
-        }}
-      >
+      <button className="addtocart" onClick={additemtocart}>
         Add to Cart
       </button>
     </div>

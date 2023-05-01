@@ -12,7 +12,7 @@ export const Totalprice = () => {
       totalprice += myCart[i].price * myCart[i].quantity;
     }
     setPrice(totalprice);
-  }, []);
+  }, [myCart]);
 
   return (
     <>

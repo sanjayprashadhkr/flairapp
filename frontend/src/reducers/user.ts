@@ -36,9 +36,23 @@ const userSlice = createSlice({
         return product.productid !== idToBeRemoved;
       });
     },
+    updateCartQuantity: (state, action) => {
+      const idToBeUpdated = action.payload.productid;
+      const quantityToBeUpdated = action.payload.quantity;
+
+      state.myCart = state.myCart.map((product: any) => {
+        if (product.productid === idToBeUpdated) {
+          state.totalCartItems -= product.quantity;
+          product.quantity = quantityToBeUpdated;
+          state.totalCartItems += product.quantity;
+        }
+        return product;
+      });
+    },
   },
 });
 
-export const { setUser, updateCart, removeCartItem } = userSlice.actions;
+export const { setUser, updateCart, removeCartItem, updateCartQuantity } =
+  userSlice.actions;
 
 export default userSlice.reducer;

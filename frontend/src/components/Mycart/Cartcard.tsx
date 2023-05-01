@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { removeCartItem } from "../../reducers/user";
 import { useDispatch } from "react-redux";
+import { updateCartQuantity } from "../../reducers/user";
 import "./cartcard.css";
 
 export const Cartcard = ({ productid, quantity }: any) => {
@@ -42,7 +43,9 @@ export const Cartcard = ({ productid, quantity }: any) => {
           {currentProduct.productName}
         </div>
         <div className="cart-details-seconday-container">
-          <div className="cartcard-product-price">${currentProduct.price}</div>
+          <div className="cartcard-product-price">
+            ${(currentProduct.price * quantitytemp).toFixed(2)}
+          </div>
           <button onClick={deleteitem} className="remove-button">
             Remove
           </button>
@@ -51,6 +54,12 @@ export const Cartcard = ({ productid, quantity }: any) => {
           <button
             onClick={() => {
               if (quantitytemp > 1) setQuantity(quantitytemp - 1);
+              dispatch(
+                updateCartQuantity({
+                  productid: productid,
+                  quantity: quantitytemp - 1,
+                })
+              );
             }}
           >
             -
@@ -59,6 +68,12 @@ export const Cartcard = ({ productid, quantity }: any) => {
           <button
             onClick={() => {
               setQuantity(quantitytemp + 1);
+              dispatch(
+                updateCartQuantity({
+                  productid: productid,
+                  quantity: quantitytemp + 1,
+                })
+              );
             }}
           >
             {" "}

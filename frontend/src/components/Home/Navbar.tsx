@@ -40,9 +40,7 @@ export const Navbar = () => {
   //Access the search result list
   const searchResults = useSelector((state: any) => state.searchresult.value);
 
-  {
-    /*display the search result as soon as the user types the text in the search bar     */
-  }
+  /*display the search result as soon as the user types the text in the search bar     */
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -74,11 +72,36 @@ export const Navbar = () => {
     setReveal(!reveal);
   };
 
+  const handleEnter = (e: any) => {
+    if (e.key === "Enter") {
+      console.log("Enter key pressed");
+      //As soon the enter is pressed, the search result list is updated
+      //Search result list is an array of product ids
+      const filteredProducts = productdata.filter((product) =>
+        product.productName.toLowerCase().includes(searchText.toLowerCase())
+      );
+
+      dispatch(setSearchResult(filteredProducts));
+      navigate(`/searchpage`);
+      // Perform search or other action here
+    }
+  };
+
+  const handleLogout = () => {
+    logout();
+    dispatch(
+      setUser({
+        emailId: null,
+        myCart: null,
+        orderHistory: null,
+        totalCartItems: null,
+      })
+    );
+  };
+
   return (
     <nav>
       <div className="navbar">
-        {/*Nav Links*/}
-        {/* <Link to={"/"}> */}
         <button className="menu-icon" onClick={toggleReveal}>
           <Menuicon />
         </button>
@@ -108,39 +131,11 @@ export const Navbar = () => {
           onChange={(e) => {
             setSearchText(e.target.value.toLowerCase());
           }}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              console.log("Enter key pressed");
-              //As soon the enter is pressed, the search result list is updated
-              //Search result list is an array of product ids
-              const filteredProducts = productdata.filter((product) =>
-                product.productName
-                  .toLowerCase()
-                  .includes(searchText.toLowerCase())
-              );
-
-              dispatch(setSearchResult(filteredProducts));
-              navigate(`/searchpage`);
-              // Perform search or other action here
-            }
-          }}
+          onKeyDown={handleEnter}
         />
         {/*Login/Logout button*/}
         {isAuthenticated ? (
-          <div
-            className="login-logout"
-            onClick={() => {
-              logout();
-              dispatch(
-                setUser({
-                  emailId: null,
-                  myCart: null,
-                  orderHistory: null,
-                  totalCartItems: null,
-                })
-              );
-            }}
-          >
+          <div className="login-logout" onClick={handleLogout}>
             Logout
           </div>
         ) : (
@@ -148,7 +143,6 @@ export const Navbar = () => {
             className="login-logout"
             onClick={() => {
               loginWithRedirect();
-              // navigate("/loginform");
             }}
           >
             Login

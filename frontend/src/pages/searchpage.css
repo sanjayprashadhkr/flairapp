@@ -1,5 +1,6 @@
 .search-page-results {
-  padding: 1.2rem 9.6rem;
+  margin-top: 12rem;
+  padding: 1.2rem 10%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 15rem;
@@ -17,4 +18,10 @@
   max-width: 150rem;
   height: 45rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@media (max-width: 773px) {
+  .search-page-results {
+    grid-template-columns: 1fr;
+  }
 }

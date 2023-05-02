@@ -26,7 +26,7 @@ export const Card = ({ cloth, name, productid, price }: propType) => {
   };
   const additemtocart = async (price: any, productid: any, quantity: any) => {
     if (!isProductAlreadyPresentInTheCart(productid)) {
-      const res = await fetch(`http://localhost:4000/updatecart`, {
+      const res = await fetch(`https://backend.sanjaykr.dev/updatecart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

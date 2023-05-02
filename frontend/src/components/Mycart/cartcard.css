@@ -1,5 +1,6 @@
 .card-container {
   width: 500px;
+  margin: 0 auto;
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -23,7 +24,7 @@
   display: flex;
   gap: 4rem;
   flex-direction: column;
-  padding: 1.6rem 2.4rem;
+  /* padding: 1.6rem 2.4rem; */
 }
 
 .cart-details-seconday-container {
@@ -54,4 +55,32 @@
 .remove-button:hover {
   background-color: #ff8787;
   color: white;
+}
+
+@media (max-width: 773px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    width: 250px;
+  }
+
+  .cart-details-seconday-container {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .cart-details-container {
+    gap: 1.6rem;
+  }
+
+  .cartcard-product-name {
+    font-size: 1.2rem;
+  }
+
+  .cartcard-product-price {
+    font-size: 1.4rem;
+  }
+
+  .remove-button {
+    font-size: 1.2rem;
+  }
 }

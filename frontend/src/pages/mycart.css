@@ -6,3 +6,10 @@
   gap: 15rem;
   margin-top: 10rem;
 }
+
+@media (max-width: 773px) {
+  .mycart-container {
+    flex-direction: column;
+    gap: 5rem;
+  }
+}

@@ -18,7 +18,7 @@ export const Price = ({ price, productid }: any) => {
   };
   const additemtocart = async () => {
     if (!isProductAlreadyPresentInTheCart()) {
-      const res = await fetch(`http://localhost:4000/updatecart`, {
+      const res = await fetch(`https://backend.sanjaykr.dev/updatecart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

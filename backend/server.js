@@ -36,7 +36,12 @@ app.get("/", async (req, res) => {
   try {
     const users = await usermodel.find({});
     // res.json({ Greetings: "Hello user!!!" });
-    res.status(200).header("Content-Type", "application/json").send(users);
+    // res
+    //   .status(200)
+    //   .header("Content-Type", "application/json")
+    //   .send(users + "HELLLLOOOO");
+
+    res.status(200).json("HELLLLOOO");
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal server error");

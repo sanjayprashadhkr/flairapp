@@ -15,11 +15,11 @@ export const Totalprice = () => {
   }, [myCart]);
 
   return (
-    <>
+    <div className="price-card-container">
       <div className="total-price">Totalprice:</div>
       <div className="price-tag">${price.toFixed(2)}</div>
       <button className="proceed-to-checkout-btn">Proceed to Checkout</button>
-    </>
+    </div>
   );
 };
 

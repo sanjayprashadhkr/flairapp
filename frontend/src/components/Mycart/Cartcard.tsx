@@ -20,16 +20,19 @@ export const Cartcard = ({ productid, quantity }: any) => {
   }
 
   const deleteitem = async () => {
-    const response = await fetch("http://localhost:4000/deletecartitem", {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        emailId: user.emailId,
-        productid: productid,
-      }),
-    }).then(() => {
+    const response = await fetch(
+      "https://backend.sanjaykr.dev/deletecartitem",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          emailId: user.emailId,
+          productid: productid,
+        }),
+      }
+    ).then(() => {
       console.log("THEN IS CALLED");
       dispatch(removeCartItem({ productid: productid }));
     });
@@ -46,40 +49,40 @@ export const Cartcard = ({ productid, quantity }: any) => {
           <div className="cartcard-product-price">
             ${(currentProduct.price * quantitytemp).toFixed(2)}
           </div>
-          <button onClick={deleteitem} className="remove-button">
-            Remove
-          </button>
+          <div className="qty-container">
+            <button
+              onClick={() => {
+                if (quantitytemp > 1) setQuantity(quantitytemp - 1);
+                dispatch(
+                  updateCartQuantity({
+                    productid: productid,
+                    quantity: quantitytemp - 1,
+                  })
+                );
+              }}
+            >
+              -
+            </button>
+            <div>{quantitytemp}</div>
+            <button
+              onClick={() => {
+                setQuantity(quantitytemp + 1);
+                dispatch(
+                  updateCartQuantity({
+                    productid: productid,
+                    quantity: quantitytemp + 1,
+                  })
+                );
+              }}
+            >
+              {" "}
+              +
+            </button>
+          </div>
         </div>
-        <div className="qty-container">
-          <button
-            onClick={() => {
-              if (quantitytemp > 1) setQuantity(quantitytemp - 1);
-              dispatch(
-                updateCartQuantity({
-                  productid: productid,
-                  quantity: quantitytemp - 1,
-                })
-              );
-            }}
-          >
-            -
-          </button>
-          <div>{quantitytemp}</div>
-          <button
-            onClick={() => {
-              setQuantity(quantitytemp + 1);
-              dispatch(
-                updateCartQuantity({
-                  productid: productid,
-                  quantity: quantitytemp + 1,
-                })
-              );
-            }}
-          >
-            {" "}
-            +
-          </button>
-        </div>
+        <button onClick={deleteitem} className="remove-button">
+          Remove
+        </button>
       </div>
     </div>
   );

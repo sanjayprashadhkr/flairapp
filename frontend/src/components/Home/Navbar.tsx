@@ -46,7 +46,7 @@ export const Navbar = () => {
     const fetchUserDetails = async () => {
       //Check whether the user exists or not If not exists then signup
       const res = await fetch(
-        `http://localhost:4000/signup?email=${user?.email}`
+        `https://backend.sanjaykr.dev/signup?email=${user?.email}`
       );
       const accessToken = await getAccessTokenSilently();
       const data = await res.json();
@@ -133,6 +133,7 @@ export const Navbar = () => {
           }}
           onKeyDown={handleEnter}
         />
+
         {/*Login/Logout button*/}
         {isAuthenticated ? (
           <div className="login-logout" onClick={handleLogout}>
@@ -176,6 +177,16 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
+      <input
+        type="text"
+        placeholder="Search Product"
+        //Onchange, the search text is updated
+        className="searchbar2"
+        onChange={(e) => {
+          setSearchText(e.target.value.toLowerCase());
+        }}
+        onKeyDown={handleEnter}
+      />
     </nav>
   );
 };

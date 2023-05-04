@@ -151,12 +151,6 @@ export const Navbar = () => {
         )}
         {/* Account/Cart Icons*/}
         <div className="icons">
-          <div
-            className="icon-container "
-            onClick={() => console.log("ACCOUNT ICONS")}
-          >
-            <Accounticon />
-          </div>
           {/* <div className="cart-icon" onClick={(e) => navigate("/mycart")}> */}
           <div
             className="icon-container mg-left-2"

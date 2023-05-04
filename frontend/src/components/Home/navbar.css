@@ -17,6 +17,7 @@
 .close-icon {
   display: none;
 }
+
 .close-icon {
   border: none;
   color: white;
@@ -39,6 +40,7 @@
   margin-bottom: 1rem;
   /* border: 2px solid #502ca3; */
 }
+
 .nav-list-items {
   position: relative;
   margin-left: 10rem;
@@ -109,37 +111,22 @@
   cursor: pointer;
   position: relative;
 }
-.navbar .icon-container::after {
+
+.icon-container::after {
   z-index: -3;
   position: absolute;
   content: "";
   display: block;
-  bottom: -1rem;
-  right: -1.5rem;
-  width: calc(var(--svg-icon-size) + 2.5rem);
-  height: calc(var(--svg-icon-size) + 2.5rem);
-  border-radius: 50%;
-  background-color: #f5f7f9;
-}
-/* .cart-icon {
-  cursor: pointer;
-  margin-left: 2rem;
-  position: relative;
-}
-.cart-icon::after {
-  z-index: -3;
-  position: absolute;
-  content: "";
-  display: block;
-  bottom: -1rem;
-  right: -1.5rem;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
   background-color: #f5f7f9;
-} */
-.cart-icon:hover::after {
-  background-color: #efefef;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.icon-container:hover {
+  cursor: pointer;
 }
 
 .navbar .login-logout {

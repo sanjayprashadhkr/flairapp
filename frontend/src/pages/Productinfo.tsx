@@ -15,7 +15,7 @@ export const Productinfo = () => {
   return (
     <div className="productinfo-container">
       <div className="image-container productinfo-image-container">
-        <img src={currentProduct.productImage} alt="cloth" />
+        <img src={currentProduct.productImage} alt="clothimage" />
       </div>
 
       <div>

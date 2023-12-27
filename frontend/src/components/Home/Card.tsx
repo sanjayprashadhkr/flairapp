@@ -6,13 +6,13 @@ import { useDispatch } from "react-redux";
 import { updateCart } from "../../reducers/user";
 
 type propType = {
-  cloth: string;
+  clothimage: string;
   name: string;
   productid: Number;
   price: Number;
 };
 
-export const Card = ({ cloth, name, productid, price }: propType) => {
+export const Card = ({ clothimage, name, productid, price }: propType) => {
   const user = useSelector((state: any) => state.user);
   const emailId = user.emailId;
   const dispatch = useDispatch();
@@ -51,7 +51,7 @@ export const Card = ({ cloth, name, productid, price }: propType) => {
     <div className="card">
       <Link className="card-link" to={`/productinfo/${productid}`}>
         <div className="image-container">
-          <img src={cloth} alt="cloth" className="productimage" />
+          <img src={clothimage} alt="clothimage" className="productimage" />
         </div>
       </Link>
       <div className="product-description">

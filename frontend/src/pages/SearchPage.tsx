@@ -15,7 +15,7 @@ export const SearchPage = () => {
         {searchResults.value.map((card: any) => (
           <Card
             key={card.productId}
-            cloth={card.productImage}
+            clothimage={card.productImage}
             name={card.productName}
             productid={card.productId}
             price={card.price}

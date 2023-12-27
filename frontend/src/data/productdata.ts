@@ -1,7 +1,10 @@
+import shirt01 from "../img/shirt01.png";
+
 export const productdata = [
   {
     productId: 1,
-    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/fullhand.png",
+    productImage:
+      "https://res.cloudinary.com/deuoakrwt/image/upload/v1703679210/obebfx7zwgoam1rymsfq.png",
     price: 99.99,
     discount: 20,
     size: "S",
@@ -14,7 +17,8 @@ export const productdata = [
   },
   {
     productId: 2,
-    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/shirt05.png",
+    productImage:
+      "https://res.cloudinary.com/deuoakrwt/image/upload/v1703679211/getbcer9zs8e5nvysvaj.png",
     price: 49.99,
     discount: 0,
     size: "M",
@@ -27,7 +31,8 @@ export const productdata = [
   },
   {
     productId: 3,
-    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/Polo+shirt.png",
+    productImage:
+      "https://res.cloudinary.com/deuoakrwt/image/upload/v1678596862/shirt03_hrxchk.png",
     price: 149.99,
     discount: 30,
     size: "L",
@@ -40,7 +45,8 @@ export const productdata = [
   },
   {
     productId: 4,
-    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/shirt04.png",
+    productImage:
+      "https://res.cloudinary.com/deuoakrwt/image/upload/v1703679210/cvib1ib8qzdtkgupvonn.png",
     price: 24.99,
     discount: 10,
     size: "XS",
@@ -53,7 +59,8 @@ export const productdata = [
   },
   {
     productId: 5,
-    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/shirt02.png",
+    productImage:
+      "https://res.cloudinary.com/deuoakrwt/image/upload/v1703679210/oeefphmaw0i2az7eapso.png",
     price: 24.99,
     discount: 10,
     size: "XS",
@@ -66,7 +73,8 @@ export const productdata = [
   },
   {
     productId: 6,
-    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/shirt06.png",
+    productImage:
+      "https://res.cloudinary.com/deuoakrwt/image/upload/v1703679211/b8lv32z8nnpi5psxqzie.png",
     price: 24.99,
     discount: 10,
     size: "XS",
@@ -79,7 +87,8 @@ export const productdata = [
   },
   {
     productId: 7,
-    productImage: "https://flairapp.s3.ap-south-1.amazonaws.com/shirt07.png",
+    productImage:
+      "https://res.cloudinary.com/deuoakrwt/image/upload/v1703679212/usykndcgmtlwmggfbzeq.png",
     price: 24.99,
     discount: 10,
     size: "XS",
@@ -93,7 +102,7 @@ export const productdata = [
   {
     productId: 8,
     productImage:
-      "https://flairapp.s3.ap-south-1.amazonaws.com/greyshirt+1.png",
+      "https://res.cloudinary.com/deuoakrwt/image/upload/v1703679211/getbcer9zs8e5nvysvaj.png",
     price: 24.99,
     discount: 10,
     size: "XS",

@@ -5,7 +5,6 @@ import "./feautureproduct.css";
 // import "../../styles.css";
 import { useSelector } from "react-redux";
 import { Card } from "./Card";
-import shirt01 from "../../img/shirt01.png";
 
 export const FeautureProduct = ({ id1, id2, id3, id4, category }: any) => {
   const productList = useSelector((state: any) => state.product.value);

@@ -32,7 +32,7 @@ export const productdata = [
   {
     productId: 3,
     productImage:
-      "https://res.cloudinary.com/deuoakrwt/image/upload/v1678596862/shirt03_hrxchk.png",
+      "https://res.cloudinary.com/deuoakrwt/image/upload/v1703679210/l21ug0lwzhewzgg9wp9n.png",
     price: 149.99,
     discount: 30,
     size: "L",

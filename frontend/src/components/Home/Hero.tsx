@@ -12,7 +12,7 @@ export const Hero = () => {
       </div>
       <img
         src={
-          "https://res.cloudinary.com/deuoakrwt/image/upload/v1678596863/shirtcollections_uckvec.jpg"
+          "https://res.cloudinary.com/deuoakrwt/image/upload/v1703679211/zeoptjyerciirbf491g9.jpg"
         }
         alt="Hero image"
       />

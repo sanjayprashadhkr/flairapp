@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { updateCart } from "../../reducers/user";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 type propType = {
   clothimage: string;
@@ -26,7 +28,8 @@ export const Card = ({ clothimage, name, productid, price }: propType) => {
   };
   const additemtocart = async (price: any, productid: any, quantity: any) => {
     if (!isProductAlreadyPresentInTheCart(productid)) {
-      const res = await fetch(`https://backend.sanjaykr.dev/updatecart`, {
+      //Backend code
+      /*const res = await fetch(`https://backend.sanjaykr.dev/updatecart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,6 +40,17 @@ export const Card = ({ clothimage, name, productid, price }: propType) => {
           productid: productid,
           quantity: quantity,
         }),
+      });*/
+
+      toast.success("Item added to cart!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
       });
       dispatch(
         updateCart({
@@ -67,6 +81,7 @@ export const Card = ({ clothimage, name, productid, price }: propType) => {
           >
             Add to Cart
           </a>
+          <ToastContainer />
         </div>
       </div>
     </div>

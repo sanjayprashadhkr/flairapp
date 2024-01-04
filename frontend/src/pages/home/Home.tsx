@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { Hero } from "../../components/hero/Hero";
-import "../App.css";
+// import "../App.css";
 // import { updateUser } from "../reducers/userreducer";
 // import { useDispatch } from "react-redux";
 import { FeautureProduct } from "../../components/featureproduct/FeautureProduct";

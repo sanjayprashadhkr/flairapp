@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Card } from "../components/Home/Card";
+import { Card } from "../../components/card/Card";
 import "./searchpage.css";
 
 export const SearchPage = () => {

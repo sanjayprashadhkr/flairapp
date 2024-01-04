@@ -1,8 +1,8 @@
 import React from "react";
-import { Cartcard } from "../components/Mycart/Cartcard";
+import { Cartcard } from "../../components/Mycart/Cartcard";
 import { useSelector } from "react-redux";
-import { Card } from "../components/Home/Card";
-import { Totalprice } from "../components/Mycart/Totalprice";
+import { Card } from "../../components/card/Card";
+import { Totalprice } from "../../components/Mycart/Totalprice";
 import { useState } from "react";
 import "./mycart.css";
 

@@ -1,11 +1,11 @@
 import React from "react";
-import { Navbar } from "./components/Home/Navbar";
-import { Footer } from "./components/Home/Footer";
-import { SearchPage } from "./pages/SearchPage";
-import { Mycart } from "./pages/Mycart";
+import { Navbar } from "./components/navbar/Navbar";
+import { Footer } from "./components/footer/Footer";
+import { SearchPage } from "./pages/searchpage/SearchPage";
+import { Mycart } from "./pages/mycart/Mycart";
 import "./styles.css";
-import { Home } from "./pages/Home";
-import { Productinfo } from "./pages/Productinfo";
+import { Home } from "./pages/home/Home";
+import { Productinfo } from "./pages/productinfo/Productinfo";
 //import { ProductSearchPage } from "./pages/ProductSearchPage";
 import { Routes, Route } from "react-router-dom";
 //import { Cart } from "./pages/Cart";

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCart } from "../../reducers/user";
+import { ToastContainer, toast } from "react-toastify";
 
 export const Price = ({ price, productid }: any) => {
   const [quantity, setQuantity] = useState(1);
@@ -18,17 +19,27 @@ export const Price = ({ price, productid }: any) => {
   };
   const additemtocart = async () => {
     if (!isProductAlreadyPresentInTheCart()) {
-      const res = await fetch(`https://backend.sanjaykr.dev/updatecart`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          emailId: emailId,
-          price: price,
-          productid: productid,
-          quantity: quantity,
-        }),
+      // const res = await fetch(`https://backend.sanjaykr.dev/updatecart`, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     emailId: emailId,
+      //     price: price,
+      //     productid: productid,
+      //     quantity: quantity,
+      //   }),
+      // });
+      toast.success("Item added to cart!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
       });
       dispatch(
         updateCart({
@@ -63,6 +74,7 @@ export const Price = ({ price, productid }: any) => {
       <button className="buy-now">Buy Now</button>
       <button className="addtocart" onClick={additemtocart}>
         Add to Cart
+        <ToastContainer />
       </button>
     </div>
   );

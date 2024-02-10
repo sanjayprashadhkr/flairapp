@@ -160,9 +160,8 @@ export const Navbar = () => {
                 {
                   /* Navigate to the mycart page only if the user is logged in*/
                 }
-                if (isAuthenticated) {
-                  navigate("/mycart");
-                }
+
+                navigate("/mycart");
               }}
             >
               <Carticon />

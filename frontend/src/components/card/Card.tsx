@@ -28,20 +28,6 @@ export const Card = ({ clothimage, name, productid, price }: propType) => {
   };
   const additemtocart = async (price: any, productid: any, quantity: any) => {
     if (!isProductAlreadyPresentInTheCart(productid)) {
-      //Backend code
-      /*const res = await fetch(`https://backend.sanjaykr.dev/updatecart`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          emailId: emailId,
-          price: price,
-          productid: productid,
-          quantity: quantity,
-        }),
-      });*/
-
       toast.success("Item added to cart!", {
         position: "top-right",
         autoClose: 2000,

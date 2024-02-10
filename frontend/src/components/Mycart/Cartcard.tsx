@@ -20,22 +20,23 @@ export const Cartcard = ({ productid, quantity }: any) => {
   }
 
   const deleteitem = async () => {
-    const response = await fetch(
-      "https://backend.sanjaykr.dev/deletecartitem",
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          emailId: user.emailId,
-          productid: productid,
-        }),
-      }
-    ).then(() => {
-      console.log("THEN IS CALLED");
-      dispatch(removeCartItem({ productid: productid }));
-    });
+    dispatch(removeCartItem({ productid: productid }));
+    // const response = await fetch(
+    //   "https://backend.sanjaykr.dev/deletecartitem",
+    //   {
+    //     method: "DELETE",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       emailId: user.emailId,
+    //       productid: productid,
+    //     }),
+    //   }
+    // ).then(() => {
+    //   console.log("THEN IS CALLED");
+
+    // });
   };
 
   return (
